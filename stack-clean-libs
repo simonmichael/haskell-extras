@@ -12,6 +12,7 @@ else
 
     keepversions="$1"
     echo "disk space free: " "$(df -H ~/.stack | tail -1 | awk '{print $4}')"
+    # shellcheck disable=SC2010
     deletedirs=$(ls -d ~/.stack/snapshots/*/*/* | grep -v -E "$keepversions" | sed -e 's%/[^/]*$%%')
     echo "disk used by stack-installed haskell libs for ghc versions not matching '$keepversions' :"
     if [[ "$deletedirs" == "" ]]; then
