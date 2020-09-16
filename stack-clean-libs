@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Clean out old libs in ~/.stack/snapshot to free up space.
+# Works on machines with bash and the usual unix tools.
+# Eg: stack-clean-libs '(8.8.4|8.10.2)'
+
+name=stack-clean-libs
+
+if [[ $1 == "" ]]; then
+    echo >&2  "Usage: $name KEEP_VERSIONS_REGEX, eg: $name '(8.8.4|8.10.2)'"
+
+else
+
+    keepversions="$1"
+    echo "disk space free: " "$(df -H ~/.stack | tail -1 | awk '{print $4}')"
+    deletedirs=$(ls -d ~/.stack/snapshots/*/*/* | grep -v -E "$keepversions" | sed -e 's%/[^/]*$%%')
+    echo "disk used by stack-installed haskell libs for ghc versions not matching '$keepversions' :"
+    if [[ "$deletedirs" == "" ]]; then
+        echo "0"
+    else
+        du -shc "$deletedirs"
+        read -rp "delete these libs to free space ? stack will reinstall them if needed. (y/n): " ans
+        if [[ $ans == "y" ]]; then
+            echo "$deletedirs" | xargs -n1 echo rm -rf
+            echo "deleted."
+            echo "disk space free: " "$(df -H ~/.stack | tail -1 | awk '{print $4}')"
+        fi
+    fi
+
+fi
