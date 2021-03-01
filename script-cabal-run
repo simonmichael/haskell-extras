@@ -1,0 +1,27 @@
+#!/usr/bin/env cabal
+{- cabal:
+build-depends: base, aeson, csv, tabular, text
+-}
+
+-- Usage: script-cabal-run (Windows: cabal script-cabal-run)
+-- A haskell script using cabal's run command (https://cabal.readthedocs.io/en/3.4/cabal-commands.html#cabal-v2-run).
+-- cabal and ghc must be in $PATH.
+-- Imported packages must be specified as above, using {- -} syntax.
+-- The base package must be mentioned (unless using NoImplicitPrelude).
+-- They will be auto-installed (?) following usual cabal-install logic.
+-- The script will be recompiled before every run.
+-- The Local Variables comment is a hint for Emacs.
+-- A .hs file extension is optional.
+-- Tested with cabal-install 3.4.0.0.
+
+import Data.Aeson
+import qualified Data.Text as T
+import Text.CSV
+import Text.Tabular
+
+main = do
+  putStrLn "hello"
+
+-- Local Variables:
+-- mode: haskell
+-- End:

@@ -4,6 +4,7 @@ Annotated haskell script templates:
 
 - script-stack-script.hs
 - script-stack-runghc
+- script-cabal-run
 - script-runghc
 
 Shell scripts:
