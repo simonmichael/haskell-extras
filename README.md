@@ -1,1 +1,1 @@
-Miscellaneous haskell-related scripts.
+Miscellaneous Haskell-related scripts and templates.
