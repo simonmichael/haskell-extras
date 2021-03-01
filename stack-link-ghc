@@ -1,0 +1,19 @@
+#!/bin/sh
+# Usage: symlinkghc
+# Symbolically link the ghc tools provided by the global stack resolver
+# (ghc ghci runghc runhaskell ghc-pkg haddock hp2ps hpc hsc2hs,
+# ~/.stack/global-project/stack.yaml)
+# into ~/.local/bin, so that they are always available at the command
+# line for quick experiments. ~/.local/bin should be in your PATH.
+# Similarly named executables/links in that directory will be overwritten.
+# GHC will be downloaded if needed, eg if you just updated the global stack resolver.
+
+cd || exit
+stack setup
+STACKBIN=$(stack path --compiler-bin)
+USERBIN="$HOME/.local/bin"
+EXES="ghc ghci runghc runhaskell ghc-pkg haddock hp2ps hpc hsc2hs"
+for EXE in $EXES; do ln -sf "$STACKBIN"/"$EXE" "$USERBIN"/"$EXE" done
+echo "$EXES installed in $USERBIN"
+
+# https://gist.github.com/simonmichael/42fa4828490ff71355b8c9029f036e4d
