@@ -1,0 +1,19 @@
+#!/usr/bin/env stack
+-- stack runghc --package aeson --package csv --package tabular --package text -- # -*- haskell -*-
+
+-- Usage: script2 (Windows: stack runghc script2)
+-- A haskell script using stack's runghc command. stack must be in $PATH.
+-- The stack runghc command must be on one line.
+-- A commented portion must follow -- #. -*- haskell -*- is a hint for Emacs.
+-- Imported packages must be specified with --package.
+-- GHC and packages from the project or global stackage resolver will be auto-installed.
+-- A .hs file extension is optional.
+-- Tested with stack 2.5.1.
+
+import Data.Aeson
+import qualified Data.Text as T
+import Text.CSV
+import Text.Tabular
+
+main = do
+  putStrLn "hello"

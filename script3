@@ -1,0 +1,18 @@
+#!/usr/bin/env runghc
+
+-- Usage: script3 (Windows: runghc script3)
+-- or:    runghc -package aeson -package csv -package tabular -package text script3
+-- A haskell script using GHC's runghc script.
+-- runghc and GHC must be in $PATH.
+-- To import from packages, install them in the global package db (eg with cabal install PKG --lib),
+-- then specify them on the command line as shown above.
+-- A .hs file extension is optional.
+-- Tested with ghc 8.10.4.
+
+-- import Data.Aeson
+-- import qualified Data.Text as T
+-- import Text.CSV
+-- import Text.Tabular
+
+main = do
+  putStrLn "hello"
