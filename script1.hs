@@ -4,7 +4,8 @@
 -- # --compile
 
 -- Usage: script1.hs (Windows: stack script1.hs)
--- A haskell script using stack's script command. stack must be in $PATH.
+-- A haskell script using stack's script command (https://docs.haskellstack.org/en/stable/GUIDE/#script-interpreter).
+-- stack must be in $PATH.
 -- The stack script command may be split across multiple lines.
 -- Sometimes packages get inferred from imports, but it's unclear; best to specify all with --package.
 -- GHC and packages from the specified stackage resolver will be auto-installed.
