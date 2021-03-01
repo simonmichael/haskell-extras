@@ -3,7 +3,7 @@
 -- --package aeson --package csv --package tabular --package text
 -- # --compile
 
--- Usage: script1.hs (Windows: stack script1.hs)
+-- Usage: script-stack-script.hs (Windows: stack script-stack-script.hs)
 -- A haskell script using stack's script command (https://docs.haskellstack.org/en/stable/GUIDE/#script-interpreter).
 -- stack must be in $PATH.
 -- The stack script command may be split across multiple lines.

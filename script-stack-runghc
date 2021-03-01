@@ -1,7 +1,7 @@
 #!/usr/bin/env stack
 -- stack runghc --package aeson --package csv --package tabular --package text -- # -*- haskell -*-
 
--- Usage: script2 (Windows: stack runghc script2)
+-- Usage: script-stack-runghc (Windows: stack runghc script-stack-runghc)
 -- A haskell script using stack's runghc command (https://docs.haskellstack.org/en/stable/GUIDE/#ghcrunghc).
 -- stack must be in $PATH.
 -- The stack runghc command must be on one line.

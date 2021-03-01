@@ -1,7 +1,7 @@
 #!/usr/bin/env runghc
 
--- Usage: script3 (Windows: runghc script3)
--- or:    runghc -package aeson -package csv -package tabular -package text script3
+-- Usage: script-runghc (Windows: runghc script-runghc)
+-- or:    runghc -package aeson -package csv -package tabular -package text script-runghc
 -- A haskell script using GHC's runghc script (https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/runghc.html).
 -- runghc and ghc must be in $PATH.
 -- To import from packages, install them in the global package db (eg with cabal install PKG --lib),

@@ -2,9 +2,9 @@ Simon's miscellaneous haskell hacking helpers.
 
 Annotated haskell script templates:
 
-- script1.hs : using stack script
-- script2    : using stack runghc
-- script3    : using runghc
+- script-stack-script.hs
+- script-stack-runghc
+- script-runghc
 
 Shell scripts:
 
